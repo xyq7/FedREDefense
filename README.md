@@ -1,7 +1,7 @@
 # FedREDefense
 The official code for ICML 2024 "FedREDefense: Defending against Model Poisoning Attacks for Federated Learning using Model Update Reconstruction Error"
 
-![avatar](FedREDefense.pdf)
+![avatar](FedREDefense.png)
 ## Overview
 Federated Learning (FL) faces threats from model poisoning attacks. 
 Existing defenses, typically relying on cross-client/global information to mitigate these attacks, fall short when faced with non-IID data distributions and/or a large number of malicious clients.
@@ -14,13 +14,15 @@ Empirical tests on three benchmark datasets confirm that FedREDefense successful
 ## Quick Start
 Evaluate FedREDefense on three datasets:
 > bash /home/yueqi/FedREDefense/scripts/cifar10/ours.sh
+
 > bash /home/yueqi/FedREDefense/scripts/cinic/ours.sh
+
 > bash /home/yueqi/FedREDefense/scripts/FashionMNIST/ours.sh
 
 
 ## Acknowledgement
 We would like to give credit to the following repositories for their code and resources that we used in our project:
 
-- [DYNAFED: Tackling Client Data Heterogeneity with Global Dynamics](https://github.com/pipilurj/DynaFed) - we use the code base of this work.
+- [DYNAFED: Tackling Client Data Heterogeneity with Global Dynamics](https://github.com/pipilurj/DynaFed)
 - [Dataset Distillation by Matching Training Trajectories
 ](https://github.com/GeorgeCazenavette/mtt-distillation) 
