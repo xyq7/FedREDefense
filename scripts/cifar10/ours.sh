@@ -13,7 +13,7 @@ hyperparameters04='[{
 
     "attack_rate" :  [0.28],
     "attack_method": ["Scaling"],
-    "participation_rate" : [1],
+    "participation_rate" : [0.1],
 
     "alpha" : [0.1],
 
@@ -35,7 +35,7 @@ hyperparameters04='[{
     "img_optim": ["sgd"],
     "lr_optim": ["sgd"],
     "save_scores" : [false],
-    "Iteration": [500],
+    "Iteration": [1500],
     "fast_iteration": [1500],
 
     "mode": ["d"],
