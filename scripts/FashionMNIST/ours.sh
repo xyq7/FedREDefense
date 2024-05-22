@@ -36,7 +36,7 @@ hyperparameters04='[{
     "img_optim": ["sgd"],
     "lr_optim": ["sgd"],
     "save_scores" : [false],
-    "Iteration": [3000],
+    "Iteration": [1500],
     "fast_iteration": [3000],
 
     "mode": ["c"],
