@@ -276,7 +276,7 @@ def run_experiment(xp, xp_count, n_experiments):
   # Delete objects to free up GPU memory
   del server; clients.clear()
   torch.cuda.empty_cache()
-  run.finish()
+
 
 def run():
   experiments_raw = json.loads(args.hp)
