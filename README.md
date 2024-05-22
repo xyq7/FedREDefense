@@ -13,11 +13,11 @@ Empirical tests on three benchmark datasets confirm that FedREDefense successful
 
 ## Quick Start
 Evaluate FedREDefense on three datasets:
-> bash /home/yueqi/FedREDefense/scripts/cifar10/ours.sh
+> bash ./scripts/cifar10/ours.sh
 
-> bash /home/yueqi/FedREDefense/scripts/cinic/ours.sh
+> bash ./scripts/cinic/ours.sh
 
-> bash /home/yueqi/FedREDefense/scripts/FashionMNIST/ours.sh
+> bash ./scripts/FashionMNIST/ours.sh
 
 
 ## Acknowledgement
