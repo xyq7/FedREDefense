@@ -52,10 +52,8 @@ class Synthesizer:
         self.batch_syn = args.batch_syn
         self.save_path = args.RESULTS_PATH
         self.iteration = args.Iteration
+        self.Max_Iter = args.Max_Iter
         self.channel = args.channel
-        self.mode = args.mode
-        self.interval = args.interval
-        self.fast_iteration = args.fast_iteration
         hard_label = [np.ones(args.ipc, dtype=np.long)*i for i in range(args.num_classes)]
         label_syn = torch.nn.functional.one_hot(torch.tensor(hard_label).reshape(-1), num_classes=args.num_classes).float()
         label_syn = label_syn * args.label_init
@@ -109,34 +107,14 @@ class Synthesizer:
             self.optimizer_lr = torch.optim.Adam([self.syn_lr], lr=args.lr_lr)
         
     def synthesize_single(self, start_trajectories,end_trajectories,syn_data, syn_label, lr_syn,  id, args, c_round):
-        if self.mode == "c":
-            if len(syn_data[id]) != 0:
-                assert len(syn_label[id]) != 0
-                self.follow_data(args,syn_data, syn_label, lr_syn,id)
-                iters = self.fast_iteration
-            else:
-                self.reinitilize_date(args)
-                iters = self.iteration
-        elif self.mode == "i":
-            if len(syn_data[id]) == 0:
-                self.reinitilize_date(args)
-                iters = self.iteration
-            elif c_round % self.interval == 1:
-                assert len(syn_label[id]) != 0
-                self.follow_data(args,syn_data, syn_label, lr_syn,id)
-                iters = self.fast_iteration
-            else:
-                assert len(syn_label[id]) != 0
-                self.follow_data(args,syn_data, syn_label, lr_syn,id)
-                iters = 1
-        elif self.mode == "d":
-            if len(syn_data[id]) == 0:
-                self.reinitilize_date(args)
-                iters = self.iteration
-            else:
-                assert len(syn_label[id]) != 0
-                self.follow_data(args,syn_data, syn_label, lr_syn,id)
-                iters = self.fast_iteration
+
+        if len(syn_data[id]) == 0:
+            self.reinitilize_date(args)
+            iters = self.iteration
+        else:
+            assert len(syn_label[id]) != 0
+            self.follow_data(args,syn_data, syn_label, lr_syn,id)
+            iters = self.Max_Iter
         
         true_iter = -1
         for it in range(0, iters):
@@ -191,7 +169,7 @@ class Synthesizer:
             param_loss /= param_dist
 
             grand_loss = param_loss
-            if grand_loss.detach().cpu() < 0.6 and self.mode == "d":
+            if grand_loss.detach().cpu() < 0.6:
                 true_iter = it + 1
                 break
             self.optimizer_img.zero_grad()

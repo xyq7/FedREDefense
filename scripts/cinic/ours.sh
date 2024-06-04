@@ -12,7 +12,7 @@ hyperparameters04='[{
     "models" : [{"ConvNet" : 100}],
 
     "attack_rate" :  [0.28],
-    "attack_method": ["Fang"],
+    "attack_method": ["Scaling"],
     "participation_rate" : [1],
 
     "alpha" : [0.1],
@@ -36,10 +36,7 @@ hyperparameters04='[{
     "lr_optim": ["sgd"],
     "save_scores" : [false],
     "Iteration": [2000],
-    "fast_iteration": [4000],
-    "mode": ["d"],
-
-    "interval": [20],
+    "Max_Iter": [4000],
 
     "pretrained" : [null],
     "save_model" : [null],

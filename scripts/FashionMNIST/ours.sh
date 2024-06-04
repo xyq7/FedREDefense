@@ -4,7 +4,7 @@ cmdargs=$1
 # `echo "export CUDA_VISIBLE_DEVICES=${gpu}"`
 #export CUDA_VISIBLE_DEVICES='0,1'
 #"FedAVG","median", "NormBound","trmean","krum","flame"
-export CUDA_VISIBLE_DEVICES='2'
+export CUDA_VISIBLE_DEVICES='1'
 hyperparameters04='[{
     "random_seed" : [4],
 
@@ -13,7 +13,7 @@ hyperparameters04='[{
 
 
     "attack_rate" :  [0.28],
-    "attack_method": ["Fang"],
+    "attack_method": ["Scaling"],
     "participation_rate" : [1],
 
     "alpha" : [0.1],
@@ -29,23 +29,20 @@ hyperparameters04='[{
 
     "sample_size": [0],
     "syn_steps" : [5],
-    "lr_img": [1e-1],
-    "lr_teacher": [1e-1],
-    "lr_label": [5e-2],
-    "lr_lr": [5e-5],
+    "lr_img": [0.5],
+    "lr_teacher": [0.1],
+    "lr_label": [0.2],
+    "lr_lr": [5e-6],
     "img_optim": ["sgd"],
     "lr_optim": ["sgd"],
     "save_scores" : [false],
-    "Iteration": [1500],
-    "fast_iteration": [3000],
-
-    "mode": ["d"],
-
+    "Iteration": [800],
+    "Max_Iter": [2000],
 
     "interval": [20],
     "pretrained" : [null],
     "save_model" : [null],
-    "log_frequency" : [100],
+    "log_frequency" : [1],
     "log_path" : ["new_noniid/"]}]
 
 '

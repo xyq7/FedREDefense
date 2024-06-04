@@ -1,9 +1,5 @@
 cmdargs=$1
 
-# `gpu=$1`
-# `echo "export CUDA_VISIBLE_DEVICES=${gpu}"`
-#export CUDA_VISIBLE_DEVICES='0,1'
-#"FedAVG","median", "NormBound","trmean","krum","flame"
 export CUDA_VISIBLE_DEVICES='0'
 hyperparameters04='[{
     "random_seed" : [4],
@@ -13,7 +9,7 @@ hyperparameters04='[{
 
     "attack_rate" :  [0.28],
     "attack_method": ["Scaling"],
-    "participation_rate" : [1],
+    "participation_rate" : [0.1],
 
     "alpha" : [0.1],
 
@@ -35,16 +31,12 @@ hyperparameters04='[{
     "img_optim": ["sgd"],
     "lr_optim": ["sgd"],
     "save_scores" : [false],
-    "Iteration": [1500],
-    "fast_iteration": [1500],
+    "Iteration": [500],
+    "Max_Iter": [1500],
 
-    "mode": ["d"],
-
-
-    "interval": [20],
     "pretrained" : [null],
     "save_model" : [null],
-    "log_frequency" : [100],
+    "log_frequency" : [10],
     "log_path" : ["new_noniid/"]}]
 
 '

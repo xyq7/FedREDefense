@@ -101,10 +101,8 @@ def run_experiment(xp, xp_count, n_experiments):
   args.img_optim=hp["img_optim"]
   args.lr_optim=hp["lr_optim"]
   args.Iteration= hp["Iteration"]
-  args.fast_iteration= hp["fast_iteration"]
-  args.mode= hp["mode"]
-  args.interval= hp["interval"]
-
+  args.Max_Iter = hp["Max_Iter"]
+  
   if args.batch_syn is None:
     args.batch_syn = num_classes * args.ipc
   print(f"num classes {num_classes}, dsa mode {hp.get('dsa', True)}")
