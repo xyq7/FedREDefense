@@ -14,7 +14,7 @@ hyperparameters04='[{
     "alpha" : [0.1],
 
     "distill_interval": [1],
-    "communication_rounds" : [500],
+    "communication_rounds" : [300],
     "local_epochs" : [1],
     "batch_size" : [32],
 
