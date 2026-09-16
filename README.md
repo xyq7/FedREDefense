@@ -1,5 +1,18 @@
 # FedREDefense
-The official code for ICML 2024 "FedREDefense: Defending against Model Poisoning Attacks for Federated Learning using Model Update Reconstruction Error"
+The official code for ICML 2024 "[FedREDefense: Defending against Model Poisoning Attacks for Federated Learning using Model Update Reconstruction Error](https://proceedings.mlr.press/v235/xie24c.html)"
+
+## $\color{red}{\text{Erratum: Table 8}}$
+
+We identified a type error in the **FashionMNIST / Min-Max / FLTrust** row of Table 8. The corrected results, obtained from a new 500-round run with seed 4, are provided below.
+
+| Metric | Originally reported | Corrected result (new run) |
+|---|---:|---:|
+| ADACC (%) | 87.03 | 66.43 |
+| AFPR (%) | 18.01 | 20.80 |
+| AFNR (%) | 67.40 | 66.40 |
+| AAR (rounds) | 337.00 | 332.00 |
+
+We apologize for the error and any confusion it may have caused.
 
 ![avatar](FedREDefense.png)
 ## Overview
